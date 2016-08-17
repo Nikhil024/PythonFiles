@@ -1,0 +1,58 @@
+import cx_Oracle
+import logging
+import time
+
+logging.basicConfig(filename='RecordInserted.log',level=logging.DEBUG)
+ls = []
+
+def connection():
+    con = cx_Oracle.connect('PANDAP/ADMIN@localhost/XE')
+    cur = con.cursor()
+    return con,cur
+
+def BeforeInsert():
+    con,cur = connection()
+    
+    query = "SELECT table_name FROM user_tables ORDER BY table_name"
+    cur.execute(query)
+    for i in cur.fetchall():
+        #print(i[0])
+        ls.append(i[0])
+        for row in i:
+            query = "SELECT COUNT(*) FROM {}".format(row)
+            cur.execute(query)
+            for j in cur.fetchall():
+                fh = open("BeforeInsert.log","a")
+                fh.write("Tablename : {} \nCount     : {}".format(row,j[0]))
+                fh.write("\n")
+
+
+def AfterInsert():
+    con,cur = connection()
+    
+    query = "SELECT table_name FROM user_tables ORDER BY table_name"
+    cur.execute(query)
+    for i in cur.fetchall():
+        #print(i[0])
+        ls.append(i[0])
+        for row in i:
+            query = "SELECT COUNT(*) FROM {}".format(row)
+            cur.execute(query)
+            for j in cur.fetchall():
+                fh = open("AfterInsert.log","a")
+                fh.write("Tablename : {} \nCount     : {}".format(row,j[0]))
+                fh.write("\n")
+
+def Comparison():
+    num_lines_before_insert = sum(1 for line in open('BeforeInsert.log'))
+    num_lines_after_insert = sum(1 for line in open('AfterInsert.log'))
+    for i in range(num_lines_before_insert):
+        for j in range(num_lines_after_insert):
+            if(i%2 ==0):
+                print(i)
+            
+def main():
+    time.sleep(500)
+    
+    
+if __name__=="__main__":Comparison()

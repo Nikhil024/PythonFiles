@@ -1,0 +1,27 @@
+import cx_Oracle
+import logging
+
+logging.basicConfig(filename='RecordInserted.log',level=logging.DEBUG)
+
+
+def connection():
+    con = cx_Oracle.connect('PANDAP/ADMIN@localhost/XE')
+    cur = con.cursor()
+    return con,cur
+
+def query():
+    con,cur = connection()
+    
+    query = "SELECT * FROM TAB"
+    cur.execute(query)
+    for i in cur.fetchall():
+        query = "SELECT * FROM {} ".format(i[0])
+        #logging.info("Query : {} ".format(query))
+        cur.execute(query)
+        logging.info("Table name: {} Count :{}".format(i[0],))
+        #query = "SELECT COUNT(*) FROM USERS"
+    cur.close()
+    con.close()
+
+
+if __name__=="__main__":query()

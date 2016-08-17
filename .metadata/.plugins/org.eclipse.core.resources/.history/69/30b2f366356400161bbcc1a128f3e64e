@@ -1,0 +1,7 @@
+abc = "Tablename : AAC Count     : 654588"
+list(abc)
+word = abc[12:]
+tablename = word.split()
+print(tablename [1])
+
+

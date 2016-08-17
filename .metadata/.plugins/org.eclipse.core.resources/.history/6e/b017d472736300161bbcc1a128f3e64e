@@ -1,0 +1,21 @@
+import cx_Oracle
+import logging
+
+logging.basicConfig(filename='RecordInserted.log',level=logging.DEBUG)
+list = []
+
+def connection():
+    con = cx_Oracle.connect('PANDAP/ADMIN@localhost/XE')
+    cur = con.cursor()
+    return con,cur
+
+def query():
+    con,cur = connection()
+    
+    query = "SELECT table_name FROM user_tables ORDER BY table_name"
+    cur.execute(query)
+    for i in cur.fetchall():
+        list.append(i)
+    for row in i:
+        print(row)   
+if __name__=="__main__":query()

@@ -1,0 +1,10 @@
+import cx_Oracle
+import logging
+
+def connection():
+    con = cx_Oracle.connect('PANDAP/ADMIN@localhost/XE')
+    con.execute()
+    print(con.version)
+
+
+if __name__=="__main__":connection()

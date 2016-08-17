@@ -1,0 +1,5 @@
+abc = ["Tablename : AAC Count     : 654588"]
+
+print(abc[10])
+
+

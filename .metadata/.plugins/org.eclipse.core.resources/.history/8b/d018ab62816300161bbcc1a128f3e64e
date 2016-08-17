@@ -1,0 +1,88 @@
+'''
+Created on 16-Aug-2016
+
+@author: nikhil_mohandas
+'''
+
+import cx_Oracle
+import logging
+import time
+
+logging.basicConfig(filename='RecordInsertedPANDAP.log',level=logging.DEBUG)
+ls = []
+sl = []
+
+def connection(username):
+    settings = 'PANDAP/ADMIN@localhost/XE'
+    con = cx_Oracle.connect(settings)
+    cur = con.cursor()
+    return cur
+
+
+def FileOperation(filename,mode):
+    fh = open(filename,mode)
+    return fh
+
+
+def BeforeInsertPANDAP():
+    cur = connection()
+    
+    query = "SELECT table_name FROM user_tables ORDER BY table_name"
+    cur.execute(query)
+    for i in cur.fetchall():
+        #print(i[0])
+        #ls.append(i[0])
+        for row in i:
+            query = "SELECT COUNT(*) FROM {}".format(row)
+            cur.execute(query)
+            for j in cur.fetchall():
+                fh = FileOperation("BeforeInsertPANDAP.log","a")
+                fh.write("Tablename : {} Count     : {}".format(row,j[0]))
+                fh.write("\n")
+
+def BeforeInsertPANDAK():
+    cur = connection()
+    
+    query = "SELECT table_name FROM user_tables ORDER BY table_name"
+    cur.execute(query)
+    for i in cur.fetchall():
+        #print(i[0])
+        #ls.append(i[0])
+        for row in i:
+            query = "SELECT COUNT(*) FROM {}".format(row)
+            cur.execute(query)
+            for j in cur.fetchall():
+                fh = FileOperation("BeforeInsertPANDAK.log","a")
+                fh.write("Tablename : {} Count     : {}".format(row,j[0]))
+                fh.write("\n")
+
+
+
+def Comparison():
+    BeforeInsert_fh = FileOperation("BeforeInsertPANDAP.log","r")
+    AfterInsert_fh = FileOperation("AfterInsertPANDAP.log","r")
+    for i in BeforeInsert_fh:
+        ls.append(i)
+    for j in AfterInsert_fh:
+        sl.append(j)
+    for nums in range(len(sl)):
+        if(sl[nums] not in ls):
+            print(sl[nums])
+                
+                
+def main():
+    print("executing BeforeInsert")
+    BeforeInsert()
+    print("finished BeforeInsert")
+    print("start to wait for 2 minutes")
+    time.sleep(120)
+    print("end to wait for 2 minutes")
+    print("executing AfterInsert")
+    AfterInsert()
+    print("finished AfterInsert")
+    print("executing Comparison")
+    Comparison()
+    print("finished Comparison")
+    
+    
+if __name__=="__main__":main()

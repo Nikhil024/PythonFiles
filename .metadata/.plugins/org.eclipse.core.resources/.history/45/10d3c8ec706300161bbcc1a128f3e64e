@@ -1,0 +1,13 @@
+import cx_Oracle
+import logging
+
+def connection():
+    con = cx_Oracle.connect('PANDAP/ADMIN@localhost/XE')
+    cur = con.cursor()
+    query = "SELECT COUNT(*) FROM USERS"
+    cur.execute(query)
+    for i in cur.fetchall():
+        print(i)
+
+
+if __name__=="__main__":connection()

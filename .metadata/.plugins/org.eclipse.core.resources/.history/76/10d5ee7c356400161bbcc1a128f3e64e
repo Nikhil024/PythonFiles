@@ -1,0 +1,7 @@
+abc = "Tablename : BUNDLE_DEFINITION_BALANCE Count     : 49"
+list(abc)
+word = abc[12:]
+tablename = word.split()
+print(tablename [0])
+
+

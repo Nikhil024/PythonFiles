@@ -1,0 +1,74 @@
+import cx_Oracle
+import logging
+import time
+
+logging.basicConfig(filename='RecordInserted.log',level=logging.DEBUG)
+ls = []
+
+def connection():
+    con = cx_Oracle.connect('PANDAP/ADMIN@localhost/XE')
+    cur = con.cursor()
+    return con,cur
+
+
+def FileOperation(filename,mode):
+    fh = open(filename,mode)
+    return fh
+
+
+def BeforeInsert():
+    con,cur = connection()
+    
+    query = "SELECT table_name FROM user_tables ORDER BY table_name"
+    cur.execute(query)
+    for i in cur.fetchall():
+        #print(i[0])
+        #ls.append(i[0])
+        for row in i:
+            query = "SELECT COUNT(*) FROM {}".format(row)
+            cur.execute(query)
+            for j in cur.fetchall():
+                fh = FileOperation("BeforeInsert.log","a")
+                fh.write("Tablename : {} Count     : {}".format(row,j[0]))
+                fh.write("\n")
+
+
+def AfterInsert():
+    con,cur = connection()
+    
+    query = "SELECT table_name FROM user_tables ORDER BY table_name"
+    cur.execute(query)
+    for i in cur.fetchall():
+        #print(i[0])
+        #ls.append(i[0])
+        for row in i:
+            query = "SELECT COUNT(*) FROM {}".format(row)
+            cur.execute(query)
+            for j in cur.fetchall():
+                fh = FileOperation("AfterInsert.log","a")
+                fh.write("Tablename : {} Count     : {}".format(row,j[0]))
+                fh.write("\n")
+
+def Comparison():
+    BeforeInsert_fh = FileOperation("BeforeInsert.log","r")
+    AfterInsert_fh = FileOperation("AfterInsert.log","r")
+    for i in BeforeInsert_fh:
+        
+        for j in AfterInsert_fh:
+            if(i==j):
+                break
+            elif(i!=j):
+                print(i,j)
+                
+def main():
+    #BeforeInsert()
+    #print("start to wait for 5 sec")
+    #time.sleep(5)
+    #print("end to wait for 5 sec")
+    #AfterInsert()
+    #print("finished")
+    Comparison()
+    print("finished comparison")
+    
+    
+if __name__=="__main__":main()

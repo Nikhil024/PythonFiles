@@ -1,0 +1,234 @@
+INFO:root:
+Tablename : AAC 
+Count     : 654588
+INFO:root:
+Tablename : ACTIVATION_PACK_LIMITS 
+Count     : 0
+INFO:root:
+Tablename : ADDRESSES 
+Count     : 53037
+INFO:root:
+Tablename : BALANCE 
+Count     : 10
+INFO:root:
+Tablename : BB_STATUS 
+Count     : 4
+INFO:root:
+Tablename : BB_STATUS_REASON 
+Count     : 0
+INFO:root:
+Tablename : BULK_TOPUP_STATUS 
+Count     : 5
+INFO:root:
+Tablename : BUNDLE_DEFINITION 
+Count     : 17
+INFO:root:
+Tablename : BUNDLE_DEFINITION_BALANCE 
+Count     : 49
+INFO:root:
+Tablename : CALL_LISTS 
+Count     : 0
+INFO:root:
+Tablename : COMMENTS 
+Count     : 678258
+INFO:root:
+Tablename : CREDIT_CARDS 
+Count     : 95885
+INFO:root:
+Tablename : CS_BULK_TOPUP_HISTORY 
+Count     : 0
+INFO:root:
+Tablename : CUSTOM_PROMOS 
+Count     : 12053
+INFO:root:
+Tablename : FILTERS 
+Count     : 3
+INFO:root:
+Tablename : FILTERS_BUNDLES_DEF 
+Count     : 0
+INFO:root:
+Tablename : FILTERS_TOPUPS 
+Count     : 1
+INFO:root:
+Tablename : FREQUENT_CONTACTS 
+Count     : 0
+INFO:root:
+Tablename : GA_UID 
+Count     : 206541
+INFO:root:
+Tablename : INVITATIONS 
+Count     : 0
+INFO:root:
+Tablename : ISSUE_MESSAGES 
+Count     : 12
+INFO:root:
+Tablename : LEADER_BOARDS 
+Count     : 0
+INFO:root:
+Tablename : LIST_LOOKUP 
+Count     : 0
+INFO:root:
+Tablename : MANAGEMENT 
+Count     : 9
+INFO:root:
+Tablename : NEWSFEED 
+Count     : 0
+INFO:root:
+Tablename : ORDER_CONTEXT 
+Count     : 5117236
+INFO:root:
+Tablename : ORDER_EXTRA_DATA 
+Count     : 5105800
+INFO:root:
+Tablename : PACKS 
+Count     : 0
+INFO:root:
+Tablename : PAYBACK_DECISION 
+Count     : 0
+INFO:root:
+Tablename : PAYBACK_OPTION 
+Count     : 5
+INFO:root:
+Tablename : PAYMENT_CONTEXT 
+Count     : 4246774
+INFO:root:
+Tablename : PAYMENT_FAILURES 
+Count     : 342231
+INFO:root:
+Tablename : PLAN_TABLE 
+Count     : 0
+INFO:root:
+Tablename : PORTIN_CREDITS 
+Count     : 0
+INFO:root:
+Tablename : PORTIN_CREDITS_STATUS 
+Count     : 3
+INFO:root:
+Tablename : PORTIN_REQUEST 
+Count     : 12553
+INFO:root:
+Tablename : PORTIN_REQUEST_STATUS 
+Count     : 6
+INFO:root:
+Tablename : PORTOUTS 
+Count     : 0
+INFO:root:
+Tablename : PORTOUT_STATUS 
+Count     : 2
+INFO:root:
+Tablename : POSTCODE_WHITELIST 
+Count     : 1
+INFO:root:
+Tablename : PREFERENCES 
+Count     : 0
+INFO:root:
+Tablename : PRODUCTS 
+Count     : 0
+INFO:root:
+Tablename : PROTECT_RESOURCES 
+Count     : 30
+INFO:root:
+Tablename : REASONS 
+Count     : 12
+INFO:root:
+Tablename : RELEASE_HISTORY 
+Count     : 0
+INFO:root:
+Tablename : ROLES 
+Count     : 8
+INFO:root:
+Tablename : SEGMENTS 
+Count     : 10
+INFO:root:
+Tablename : SESSIONS 
+Count     : 251656
+INFO:root:
+Tablename : SIMS 
+Count     : 401487
+INFO:root:
+Tablename : SIMS_HISTORIC 
+Count     : 127451
+INFO:root:
+Tablename : SIMS_SEGMENTS 
+Count     : 659
+INFO:root:
+Tablename : SIMS_TEMP 
+Count     : 0
+INFO:root:
+Tablename : SIM_ACT_LIMITS 
+Count     : 80
+INFO:root:
+Tablename : SIM_STATUS_REASON 
+Count     : 569263
+INFO:root:
+Tablename : SMS_REQUESTS 
+Count     : 0
+INFO:root:
+Tablename : SUBSCRIBERS 
+Count     : 0
+INFO:root:
+Tablename : SYS_KILLED_SESSION 
+Count     : 0
+INFO:root:
+Tablename : TEMP 
+Count     : 646
+INFO:root:
+Tablename : TEMP_MSISDN 
+Count     : 6849
+INFO:root:
+Tablename : TEMP_SIMS_DATA 
+Count     : 19346
+INFO:root:
+Tablename : TEMP_ZORD_FULL 
+Count     : 5216
+INFO:root:
+Tablename : TEMP_ZORD_FULL2 
+Count     : 4601
+INFO:root:
+Tablename : TEMP_ZORD_FULL3 
+Count     : 4601
+INFO:root:
+Tablename : TEMP_ZORD_FULL4 
+Count     : 4601
+INFO:root:
+Tablename : TMP_KKINFO 
+Count     : 327
+INFO:root:
+Tablename : TOKENS 
+Count     : 71290
+INFO:root:
+Tablename : TOPUPS 
+Count     : 6
+INFO:root:
+Tablename : USERS 
+Count     : 247651
+INFO:root:
+Tablename : USERS_ADDRESSES 
+Count     : 53037
+INFO:root:
+Tablename : USERS_AWARDS 
+Count     : 0
+INFO:root:
+Tablename : USERS_EXTRA_DATA 
+Count     : 247554
+INFO:root:
+Tablename : USERS_FREE_CREDIT 
+Count     : 3
+INFO:root:
+Tablename : USERS_FREE_CREDIT_BACKUP 
+Count     : 1185
+INFO:root:
+Tablename : USERS_PREFERENCES 
+Count     : 0
+INFO:root:
+Tablename : USERS_PROMO 
+Count     : 5507
+INFO:root:
+Tablename : USERS_PROMO_DESCRIPTION 
+Count     : 3
+INFO:root:
+Tablename : USERS_ROLES 
+Count     : 247645
+INFO:root:
+Tablename : USERS_SEGMENTS 
+Count     : 223532
