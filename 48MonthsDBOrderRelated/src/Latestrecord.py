@@ -6,3 +6,4 @@ Created on 17-Aug-2016
 
 import AfterInsertAndCompare
 query = "select * from tab"
+queryss = "demos"
